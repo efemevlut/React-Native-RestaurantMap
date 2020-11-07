@@ -1,12 +1,12 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import {TouchableOpacity, Text} from 'react-native';
+import { cityStyle } from '../styles';
 
-const City = () => {
-    return (
-        <View>
-            <Text>City</Text>
-        </View>
-    )
-}
+const City = (props) => {
+  return (
+    // City button..
+    null
+  );
+};
 
-export { City };
+export {City};

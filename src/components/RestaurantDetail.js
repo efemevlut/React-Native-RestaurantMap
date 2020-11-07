@@ -1,12 +1,13 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import {View, Text} from 'react-native';
 
-const RestaurantDetail = () => {
-    return (
-        <View>
-            <Text>Restaurant Detail</Text>
-        </View>
-    )
-}
+import {detailStyle} from '../styles';
 
-export { RestaurantDetail };
+const RestaurantDetail = (props) => {
+  return (
+    // Restaurant detail modal..
+    null
+  );
+};
+
+export {RestaurantDetail};
