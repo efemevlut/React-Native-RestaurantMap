@@ -5,7 +5,7 @@ export const searchbarStyle = StyleSheet.create({
     backgroundColor: "white",
     padding: 5,
     borderRadius: 10,
-    width: Dimensions.get("window").width * 1,
+    width: Dimensions.get("window").width * 0.8,
     top: 10,
     alignSelf: "center",
     flexDirection: "row",
@@ -19,10 +19,17 @@ export const searchbarStyle = StyleSheet.create({
 
 export const cityStyle = StyleSheet.create({
   container: {
-
+    backgroundColor: "white",
+    padding: 5,
+    margin: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+    flexDirection: "row",
   },
   text: {
-
+    fontWeight: "bold",
+    color: "#424242"
   },
 });
 
