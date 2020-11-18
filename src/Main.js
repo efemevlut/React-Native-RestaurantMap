@@ -6,8 +6,10 @@ import {City, RestaurantDetail, SearchBar} from './components';
 
 let originalList = [];
 const Main = (props) => {
+  const [modalFlag, setModalFlag] = useState(false);
   const [cityList, setCityList] = useState([]);
   const [restaurants, setRestaurant] = useState([]);
+  const [selectedRestaurant, setSelectedRestaurant] = useState("")
   const mapRef = useRef(null);
 
   const fetchCities = async () => {
@@ -51,6 +53,11 @@ const Main = (props) => {
     mapRef.current.fitToCoordinates(restaurantCoordinates);
   };
 
+  const onRestaurantSelect = (restaurant) => {
+    setSelectedRestaurant(restaurant);
+    setModalFlag(true)
+  }
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1}}>
@@ -70,6 +77,7 @@ const Main = (props) => {
                 latitude: r.lat,
                 longitude: r.lng,
               }}
+              onPress={() => onRestaurantSelect(r)}
             />
           ))}
         </MapView>
@@ -83,6 +91,10 @@ const Main = (props) => {
             renderItem={({item}) => (
               <City cityName={item} onSelect={() => onCitySelect(item)} />
             )}
+          />
+          <RestaurantDetail
+            isVisible={modalFlag}
+            restaurant={selectedRestaurant}
           />
         </View>
       </View>
